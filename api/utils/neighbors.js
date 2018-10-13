@@ -24,6 +24,9 @@ function neighbors(req) {
       neighbors.left.push(c.prev());
   }
 
+  neighbors.right.sort(function(a,b){ return a-b;});
+  neighbors.left.sort(function(a,b){ return a-b;});
+
   return neighbors;
 }
 
