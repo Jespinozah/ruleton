@@ -1,12 +1,12 @@
 const  Circular = require('./circular');
-const numbers = require('./constants');
+const constants = require('./constants');
 
 function neighbors(req) {
   const number = parseInt(req.params.number,10);
   const numberNeighbors = parseInt(req.params.numberNeighbors, 10);
 
-  const aux = numbers.indexOf(number);
-  const c = new Circular(numbers,aux);
+  const aux = constants.NUMBERS.indexOf(number);
+  const c = new Circular(constants.NUMBERS,aux);
 
   const neighbors = {
     right : [],
