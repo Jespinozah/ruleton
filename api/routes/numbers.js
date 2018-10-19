@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const numbersController = require('../controllers/numbersController');
 const trainController = require('../controllers/trainController');
+const executeController = require('../controllers/executeController');
 
 router.get('/', (req, res, next)=> {
   res.status(200).json({
@@ -15,9 +16,13 @@ router.post('/', (req, res, next)=> {
   });
 });
 
+router.get('/execute/:number/', executeController.execute);
+
 router.get('/:numberNeighbors/:number', numbersController.getNeighbors);
 
 router.get('/train/:in/:out', trainController.train);
+
+
 
 router.patch('/:number',(req,res,next)=>{
     res.status(200).json({

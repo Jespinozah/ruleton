@@ -16,7 +16,14 @@ exports.train = (req,res,next)=>{
     };
 
     launches.insert(dataTrain);
+
     console.log(launches.data);
+    /*
+    console.log(zones.processTrainingData(launches.data));
+    console.log(zones.train(launches.data));
+    console.log(zones.execute("A"));
+
+    */
     res.status(200).json({
       in : myZoneIn,
       out : myZoneOut,
