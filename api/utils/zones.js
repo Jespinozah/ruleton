@@ -1,7 +1,6 @@
 const constants = require('./constants');
 
 
-
 function getZone(element) {
   let temp= '';
 
